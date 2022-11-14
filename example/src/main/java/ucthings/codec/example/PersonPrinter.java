@@ -1,3 +1,5 @@
+package ucthings.codec.example;
+
 import com.eclipsesource.v8.JavaVoidCallback;
 import com.eclipsesource.v8.Releasable;
 import com.eclipsesource.v8.V8Array;

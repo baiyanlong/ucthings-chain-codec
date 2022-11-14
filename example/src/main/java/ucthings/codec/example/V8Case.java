@@ -1,3 +1,5 @@
+package ucthings.codec.example;
+
 import com.eclipsesource.v8.V8;
 import com.eclipsesource.v8.V8Array;
 import com.eclipsesource.v8.V8Object;
