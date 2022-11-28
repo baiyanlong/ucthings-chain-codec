@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2f32989-c59f-4d30-b9b2-18f872843213" name="Changes" comment="feat: 初始化工程架构">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/BeanMapEmitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/BeanProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CharPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CheckedCallable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CheckedComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CheckedConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CheckedFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CheckedRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CheckedSupplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CommonConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/CopyProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/InternalQueueManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/QueueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/SimpleBeanMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/SimpleBeanMapKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/StringPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/Unchecked.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/executor/SystemExecutorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/Base64Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/BeanCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/BeanCopierKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/BeanUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/ClassUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/ConversionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/ConvertUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/DatatypeConverterUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/DateTimeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/DigestUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/EnumToStringConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/Exceptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/Func.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/IoUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/NumberUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/ObjectUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/ReflectUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/SimpleConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/StrSpliter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/StringToEnumConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/common/util/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/ElasticSearchLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/KafkaLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/Log4j2LogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/LogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/NoOutLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/QueueMessageLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/SysLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/UcKvLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/UcLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/appender/UcSysLogAppender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/help/ElasticsearchTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/log/provider/Log4j2ServiceProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/message/MessagePool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/message/MessageRemoveHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/message/RequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/message/ResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/message/TransportMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/message/memory/MemoryMessagePool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ucthings/codec/step/ChainCodectApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/org.slf4j.spi.SLF4JServiceProvider" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/ucthings/codec/example/Console.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/ucthings/codec/example/PersonPrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/ucthings/codec/example/V8Case.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ucthings.codec.common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ucthings.codec.core/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ucthings.codec.core/src/main/java/ucthings/codec/application/UcthingsCodecApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ucthings.codec.engine/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ucthings.codec.middleware/pom.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\yxlxf\.m2\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Program Files (x86)/maven" />
+        <option name="userSettingsFile" value="C:\Program Files (x86)\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HLkPyMiavmblIQbtmqmnYXf6Df" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="compactDirectories" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../device-test" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.39262187" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\ucthings-chain-codec\src\main\java\ucthings\codec" />
+      <recent name="C:\project\ucthings-chain-codec\src\main\java\ucthings.codec\log" />
+      <recent name="C:\project\ucthings-chain-codec\src\main\resources\META-INF\services" />
+      <recent name="C:\project\ucthings-chain-codec\src\main\resources" />
+      <recent name="C:\project\ucthings-chain-codec\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\project\ucthings-chain-codec\src\main\java\ucthings\codec\log" />
+      <recent name="C:\project\ucthings-chain-codec\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ucthings.codec.step" />
+      <recent name="step" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="V8Case" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ucthings.codec.example.V8Case" />
+      <module name="example" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.V8Case" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2f32989-c59f-4d30-b9b2-18f872843213" name="Changes" comment="" />
+      <created>1668071736043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668071736043</updated>
+      <workItem from="1668071737716" duration="3979000" />
+      <workItem from="1668147635888" duration="157000" />
+      <workItem from="1668151667981" duration="28269000" />
+      <workItem from="1668652809236" duration="1516000" />
+      <workItem from="1668682451576" duration="9677000" />
+      <workItem from="1669194037765" duration="5412000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: j2v8 引擎代码">
+      <created>1668167657280</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668167657280</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: 初始化工程架构">
+      <created>1668422559482</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668422559482</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: j2v8 引擎代码" />
+    <MESSAGE value="feat: 初始化工程架构" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 初始化工程架构" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
