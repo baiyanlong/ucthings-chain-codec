@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: chainCodec
+  profiles:
+    active: dev

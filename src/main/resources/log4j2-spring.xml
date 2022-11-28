@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，你会看到log4j2内部各种详细输出-->
+<!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身，设置间隔秒数-->
+<configuration monitorInterval="30">
+    <!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+    <!--变量配置-->
+    <Properties>
+        <!--
+               `%c{参数} 或 %logger{参数}  ##输出日志名称
+               %C{参数} 或 %class{参数    ##输出类型
+               %d{参数}{时区te{参数}{时区} ##输出时间
+               %F|%file                  ##输出文件名
+               highlight{pattern}{style} ##高亮显示
+               %l  ##输出错误的完整位置
+               %L  ##输出错误行号
+               %m 或 %msg 或 %message ##输出错误信息
+               %M 或 %method ##输出方法名
+               %n            ##输出换行符
+               %level{参数1}{参数2}{参数3} ##输出日志的级别
+               %t 或 %thread              ##创建logging事件的线程名
+               */
+               ######### 特殊符号 ############
+               #有些特殊符号不能直接打印，需要使用实体名称或者编号
+               //
+               & —— &amp; 或者 &#38;
+               < —— &lt;  或者 &#60;
+               > —— &gt;  或者 &#62;
+               “ —— &quot; 或者 &#34;
+               ‘ —— &apos; 或者 &#39;
+               */
+
+               ######## pattern对齐修饰 ##########
+               // 对齐修饰，可以指定信息的输出格式，如是否左对齐，是否留空格等。
+               ## 编写格式为在任何pattern和%之间加入一个小数，可以是正数，也可以是负数。
+               ## 整数表示右对齐，负数表示左对齐；
+               ## 整数位表示输出信息的最小n个字符，如果输出信息不够n个字符，将用空格补齐；
+               ## 小数位表示输出信息的最大字符数，如果超过n个字符，则只保留最后n个字符的信息
+               ## （注意：保留的是后20个字符，而不是前20个字符）
+               #示例如下
+               %20 —— 右对齐，不足20个字符则在信息前面用空格补足，超过20个字符则保留原信息
+               %-20 —— 左对齐，不足20个字符则在信息后面用空格补足，超过20个字符则保留原信息
+               %.30 —— 如果信息超过30个字符，则只保留最后30个字符
+               %20.30 —— 右对齐，不足20个字符则在信息前面用空格补足，超过30个字符则只保留最后30个字符
+               %-20.30 —— 左对齐，不足20个字符则在信息后面用空格补足，超过30个字符则只保留最后30个字符`
+           -->
+        <property name="LOG_PATTERN"
+                  value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5.8level %pid  %5.10sn - [%30.30t] %-50.100c{1.}: %m%n"/>
+        <!--        <property name="LOG_PATTERN"-->
+        <!--                  value="%d{yyyy-MM-dd HH:mm:.gitkeep.SSS} %level %10.10L &ndash;&gt; [%10.30t] %-50.100c{1.}[%30.50M]: %m%n"/>-->
+        <!-- 定义日志存储的路径 -->
+        <property name="FILE_PATH" value="logs"/>
+        <property name="FILE_NAME" value="chainCodec"/>
+    </Properties>
+
+    <appenders>
+        <console name="Console" target="SYSTEM_OUT">
+            <!--输出日志的格式-->
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <!--控制台只输出level及其以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <!--            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+        </console>
+        <UcSys name="UcSys" syncSend="true">
+            <!--输出日志的格式-->
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+        </UcSys>
+
+        <!--        &lt;!&ndash;文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，适合临时测试用&ndash;&gt;-->
+        <!--        <File name="devLogFile" fileName="${FILE_PATH}/dev.log" append="false">-->
+        <!--            <PatternLayout pattern="${LOG_PATTERN}"/>-->
+        <!--        </File>-->
+
+        <!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="RollingFileInfo" fileName="${FILE_PATH}/info.log"
+                     filePattern="${FILE_PATH}/${FILE_NAME}-INFO-%d{yyyy-MM-dd}_%i.log.gz">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!--interval属性用来指定多久滚动一次，默认是1 hour-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件开始覆盖-->
+            <DefaultRolloverStrategy max="15"/>
+        </RollingFile>
+
+        <!-- 这个会打印出所有的warn及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="RollingFileWarn" fileName="${FILE_PATH}/warn.log"
+                     filePattern="${FILE_PATH}/${FILE_NAME}-WARN-%d{yyyy-MM-dd}_%i.log.gz">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!--interval属性用来指定多久滚动一次，默认是1 hour-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件开始覆盖-->
+            <DefaultRolloverStrategy max="15"/>
+        </RollingFile>
+
+        <!-- 这个会打印出所有的error及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="RollingFileError" fileName="${FILE_PATH}/error.log"
+                     filePattern="${FILE_PATH}/${FILE_NAME}-ERROR-%d{yyyy-MM-dd}_%i.log.gz">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!--interval属性用来指定多久滚动一次，默认是1 hour-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件开始覆盖-->
+            <DefaultRolloverStrategy max="15"/>
+        </RollingFile>
+    </appenders>
+
+    <!--Logger节点用来单独指定日志的形式，比如要为指定包下的class指定不同的日志级别等。-->
+    <!--然后定义loggers，只有定义了logger并引入的appender，appender才会生效-->
+    <loggers>
+        <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
+        <logger name="org.mybatis" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="UcSys"/>
+        </logger>
+        <!--监控系统信息-->
+        <!--若是additivity设为false，则 子Logger 只会在自己的appender里输出，而不会在 父Logger 的appender里输出。-->
+        <Logger name="org.springframework" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="UcSys"/>
+        </Logger>
+
+        <logger name="org.apache.kafka.clients.producer.ProducerConfig" level="off"/>
+
+        <logger name="org.apache.kafka.clients.consumer.ConsumerConfig" level="off"/>
+
+        <root level="info">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="UcSys"/>
+            <!--            <appender-ref ref="devLogFile"/>-->
+            <appender-ref ref="RollingFileInfo"/>
+            <appender-ref ref="RollingFileWarn"/>
+            <appender-ref ref="RollingFileError"/>
+        </root>
+    </loggers>
+
+</configuration>

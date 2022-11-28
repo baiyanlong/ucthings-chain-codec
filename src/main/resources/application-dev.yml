@@ -1,0 +1,78 @@
+server:
+  port: 8083
+
+
+spring:
+  redis:
+    host: ${REDIS_HOST:172.16.8.171}
+    port: ${REDIS_PORT:6379}
+    database: ${REDIS_DB_NUM:15}
+    password: ${REDIS_PASSWORD:ucchip@redis!}
+    lettuce:
+      pool:
+        enabled: true
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: 1000ms
+      shutdown-timeout: 100ms
+
+
+log:
+  #  mem:
+  #    enable: false
+  #    impl: log4j2
+  #    threadNum: 8
+  #    loggerQueueCapacity: 128
+  #    loggerMapCapacity: 128
+  #  kafka:
+  #    enable: flase
+  #    threadNum: 8
+  #    outFile: true
+  #    config:
+  #      #      "bootstrap-servers": '172.16.0.171:9092'
+  #      "bootstrap-servers": '172.16.10.11:9092,172.16.10.12:9092,172.16.10.13:9092'
+  #      "key-serializer": 'org.apache.kafka.common.serialization.StringSerializer'
+  #      "value-serializer": 'org.apache.kafka.common.serialization.StringSerializer'
+  # dev环境
+  #  elasticsearch:
+  #    enable: true
+  #    threadNum: 4
+  #    outFile: false
+  #    config:
+  #      hosts: es01:9200,es02:9201,es03:9202
+  #      cert: D:/ucthings-dev-es.crt
+  #      username: elastic
+  #      password: ucthings@123
+  #      scheme: https
+  #      prefix: dr
+  # test
+  elasticsearch:
+    enable: false
+    threadNum: 4
+    outFile: false
+    config:
+      hosts: elasticsearch.dev.ucthings.com:443
+      cert:
+      username: ucchip
+      password: Devlog_1108
+      scheme: https
+      prefix: dt
+
+system:
+  queue:
+    # queue类型：MEMORY KAFKA
+    type: KAFKA
+    # 配置kv k:字符串 v:字符串
+    configKV:
+      bootstrap-servers: 172.16.8.172:19092,172.16.8.172:29092,172.16.8.172:39092
+    topicKV:
+      key: 2
+
+
+cache:
+  # the value has type :memory,redis
+  type: memory
+  memory:
+    timeoutMs: 60000
+    maxSize: 10240000
